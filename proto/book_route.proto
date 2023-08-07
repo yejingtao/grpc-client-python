@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option cc_generic_services = true;
+
+package mybook;
+
+// The greeting service definition.
+service BookService {
+  // Sends a greeting
+  rpc check (RequestData) returns (Book) {}
+}
+
+// The request message containing the user's name.
+message RequestData {
+  string name = 1;
+}
+
+message Book {
+  string name = 1;
+  string auther = 2;
+  int32 price = 3;
+}
+
+
